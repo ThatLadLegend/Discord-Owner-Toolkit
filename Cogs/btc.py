@@ -22,7 +22,7 @@ class btc(commands.Cog, name="Bitcoin Status"):
 	def __init__(self, bot:commands.Bot):
 		self.bot = bot
 
-	@commands.command(name = "btc", aliases=["btc", "bitcoin"], usage=";btc | ;bitcoin", description = "Shows the current BTC Price stats.")
+	@commands.command(name = "btc", aliases=["bitcoin"], usage=";btc | ;bitcoin", description = "Shows the current BTC Price stats.")
 	@commands.guild_only()
 	@commands.cooldown(1, 2, commands.BucketType.member)
 	async def btc(self, ctx:commands.Context, msg_id: int = None, channel: discord.TextChannel = None):

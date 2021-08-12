@@ -19,7 +19,7 @@ class cgen(commands.Cog, name="Colour Generator Command"):
 	@commands.guild_only()
 	@commands.cooldown(1, 2, commands.BucketType.member)
 	async def cgen(self, ctx:commands.Context):
-		embed = discord.Embed(title="Randomly Generated Colour.", description=f"Decimal Colour : {dec_number}\nHex Code : {hex_number}", color=randint(90, 0xffffff))
+		embed = discord.Embed(title="Randomly Generated Colour.", description=f"Decimal Colour : {dec_number}\nHex Code : {hex_number}", color=randint(90, 0xffffff)) # Doesn't really work so I change.
 		await ctx.trigger_typing()
 		await ctx.send(embed=embed)
 
