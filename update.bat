@@ -1,0 +1,1 @@
+pip install --no-warn-script-location --user -U -r requirements.txt

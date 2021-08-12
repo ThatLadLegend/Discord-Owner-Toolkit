@@ -1,7 +1,5 @@
 import discord
 from discord.ext import commands
-from discord.ext import tasks
-from discord.ext import edit
 import simplejson as json
 from urllib.request import urlopen
 import math
