@@ -33,7 +33,7 @@ class HelpCog(commands.Cog, name="Help Command"):
 			if commandName2 is None:
 				await ctx.channel.send("No command found!")   
 			else:
-				embed = discord.Embed(title=f"{commandName2.name.title()} Command", description="", color=randint(0, 0xffffff))
+				embed = discord.Embed(title=f"{commandName2.name.title()} Command", description="", color=randint(90, 0xffffff))
 				embed.set_thumbnail(url=f'{self.bot.user.avatar_url}')
 				embed.add_field(name=f"Name", value=f"{commandName2.name}", inline=False)
 				aliases = commandName2.aliases
@@ -53,7 +53,7 @@ class HelpCog(commands.Cog, name="Help Command"):
 				embed.add_field(name=f"Description", value=f"{commandName2.description}", inline=False)
 				await ctx.channel.send(embed=embed)			 
 		else:
-			embed = discord.Embed(title=f"Help Page", color=randint(0, 0xffffff))
+			embed = discord.Embed(title=f"Help Page", color=randint(90, 0xffffff))
 			embed.set_thumbnail(url=f'{self.bot.user.avatar_url}')
 			for i in self.bot.commands:
 				embed.add_field(name=i.name.title(), value=i.description, inline=False)
