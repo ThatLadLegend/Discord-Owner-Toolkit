@@ -1,4 +1,4 @@
-# Simple Colour Generating Bot With An Added BTC Price Status in GBP.
+## Simple Colour Generating Bot With An Added BTC Price Status in GBP.
 
 - This was coded by me in Python 3.8.
 
