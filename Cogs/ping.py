@@ -16,7 +16,6 @@ class PingCog(commands.Cog, name="ping command"):
 		await ctx.trigger_typing()
 		message = await ctx.send("🏓 Pong !")
 		ping = (time.monotonic() - before) * 1000
-		await ctx.trigger_typing()
 		await message.edit(content=f"🏓 Pong !  `{int(ping)} ms`")
 
 def setup(bot:commands.Bot):
