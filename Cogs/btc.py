@@ -3,6 +3,7 @@ from discord.ext import commands
 import simplejson as json
 from urllib.request import urlopen
 import math
+from random import randint
 
 def get(url, object_hook=None):
     with urlopen(url) as resource:  # 'with' is important to close the resource after use
@@ -25,7 +26,7 @@ class btc(commands.Cog, name="Bitcoin Status"):
 	@commands.command(name = "btc", aliases=["bitcoin"], usage=";btc | ;bitcoin", description = "Shows the current BTC Price stats.")
 	@commands.guild_only()
 	@commands.cooldown(1, 2, commands.BucketType.member)
-	async def btc(self, ctx:commands.Context, msg_id: int = None, channel: discord.TextChannel = None):
+	async def btc(self, ctx:commands.Context):
 		embed=discord.Embed(title="Current BTC Price", color=randint(90, 0xffffff))
 		embed.add_field(name="BTC Price", value=f"\nBTC Status Now : __£{ceiling}__")
 		embed.set_thumbnail(url="https://icons.iconarchive.com/icons/cjdowner/cryptocurrency-flat/1024/Bitcoin-BTC-icon.png")
