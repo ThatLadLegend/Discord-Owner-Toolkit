@@ -33,9 +33,9 @@ class HelpCog(commands.Cog, name="Help Command"):
 			if commandName2 is None:
 				await ctx.channel.send("No command found!")   
 			else:
-				embed = discord.Embed(title=f"{commandName2.name.title()} Command", description="", color=randint(90, 0xffffff))
+				embed = discord.Embed(title=f"{commandName2.name.title()} Command", description="", color=randint(500, 0xffffff))
 				embed.set_thumbnail(url=f'{self.bot.user.avatar_url}')
-				embed.add_field(name=f"Name", value=f"{commandName2.name}", inline=False)
+				embed.add_field(name=f"Name", value=f"{commandName2.name}", inline=True)
 				aliases = commandName2.aliases
 				aliasList = ""
 				if len(aliases) > 0:
@@ -44,19 +44,21 @@ class HelpCog(commands.Cog, name="Help Command"):
 					aliasList = aliasList[:-2]
 					embed.add_field(name=f"Aliases", value=aliasList)
 				else:
-					embed.add_field(name=f"Aliases", value="None", inline=False)
+					embed.add_field(name=f"Aliases", value="None", inline=True)
 
 				if commandName2.usage is None:
-					embed.add_field(name=f"Usage", value=f"None", inline=False)
+					embed.add_field(name=f"Usage", value=f"None", inline=True)
 				else:
-					embed.add_field(name=f"Usage", value=f"{self.bot.command_prefix}{commandName2.name} | {commandName2.usage}", inline=False)
-				embed.add_field(name=f"Description", value=f"{commandName2.description}", inline=False)
+					embed.add_field(name=f"Usage", value=f"{self.bot.command_prefix}{commandName2.name} | {commandName2.usage}", inline=True)
+				embed.add_field(name=f"Description", value=f"{commandName2.description}", inline=True)
+				embed.set_footer(text=ctx.message.author, icon_url=ctx.message.author.avatar_url)
 				await ctx.channel.send(embed=embed)			 
 		else:
-			embed = discord.Embed(title=f"Help Page", color=randint(90, 0xffffff))
+			embed = discord.Embed(title=f"Help Page", color=randint(500, 0xffffff))
 			embed.set_thumbnail(url=f'{self.bot.user.avatar_url}')
 			for i in self.bot.commands:
-				embed.add_field(name=i.name.title(), value=i.description, inline=False)
+				embed.add_field(name=i.name.title(), value=i.description, inline=True)
+			embed.set_footer(text=ctx.message.author, icon_url=ctx.message.author.avatar_url)
 			await ctx.channel.send(embed=embed)
 
 def setup(bot:commands.Bot):
