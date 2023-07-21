@@ -42,7 +42,7 @@ class ServerInfo(commands.Cog):
 		self.bot = bot
 
 	@commands.has_permissions(manage_messages=True)
-	@commands.command(name = "Server Info", aliases = ["serverinfo", "sinfo"], usage = f"sinfo `serverID`", description = "A command which grabs the Server Information.")
+	@commands.command(name = "Server Info", aliases = ["serverinfo", "sinfo"], usage = f"sinfo", description = "A command which grabs the Server Information.")
 	@commands.bot_has_permissions(send_messages=True)
 	@commands.cooldown(1, 2, commands.BucketType.member)
 	async def ServerInfo(self, ctx, server: discord.Guild = None):
@@ -78,7 +78,7 @@ class InviteInfo(commands.Cog):
 		if (invite == None):
 			await ctx.reply("Please provide a valid invite.")
 
-		embed=discord.Embed(title="Invite Info", description=f"### Server Invite for {invite.guild}.", color=ctx.message.author.color)
+		embed=discord.Embed(title="Invite Info", description=f"### Server Invite for [{invite.guild}]({invite.url}).", color=ctx.message.author.color)
 
 		embed.add_field(name=f"Server Name", value=invite.guild, inline=True)
 
