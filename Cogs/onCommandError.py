@@ -30,5 +30,5 @@ class OnCommandErrorCog(commands.Cog, name="on command error"):
 		else:
 			await ctx.reply(error)
 
-def setup(bot):
-	bot.add_cog(OnCommandErrorCog(bot))
+async def setup(bot):
+	await bot.add_cog(OnCommandErrorCog(bot))
